@@ -17,18 +17,12 @@ And for Puzzle Image Captcha we use OpenCV to detect the puzzle and calculate th
 
 <h2>Google Recaptcha</h2>
 <p align="center">
-  <video width="640" height="360" controls>
-    <source src="VID_20250408225024.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+  <img src="VID_20250408225024-ezgif.com-video-to-gif-converter.gif" alt="Google Recaptcha Demo" width="640">
 </p>
 
 <h2>Puzzle Image Captcha</h2>
 <p align="center">
-  <video width="640" height="360" controls>
-    <source src="VID_20250408224929.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+  <img src="VID_20250408224929-ezgif.com-video-to-gif-converter.gif" alt="Puzzle Image Captcha Demo" width="640">
 </p>
 
 *Note: If you're viewing this on GitHub, you may need to download the video to view it. The demo video is located in the root directory of the repository.*
