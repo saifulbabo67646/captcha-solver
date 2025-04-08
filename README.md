@@ -1,98 +1,68 @@
+# Vision AI - AI Captcha Solver
+
 <p align="center">
- <img width="100px" src="https://raw.githubusercontent.com/hebertcisco/vercel-typescript-express-api/cebd0c563141a4cc7d279997b8cb5dd9232d7591/.github/images/favicon512x512-vercel-typescript-express-api.png" align="center" alt=":package: deploy-python-fastapi-in-vercel" />
- <h2 align="center">:package: deploy-python-fastapi-in-vercel</h2>
- <p align="center">This example shows how to use FastApi  on Vercel with Serverless Functions using the Python Runtime.</p>
+  <h2 align="center">Vision AI - AI Captcha Solver</h2>
+  <p align="center">A powerful FastAPI-based service that uses Vision AI to solve text-based and Google recaptcha and Puzzle Image captchas with high accuracy.</p>
 </p>
 
-  <p align="center">
-    <a href="https://github.com/hebertcisco/deploy-python-fastapi-in-vercel/issues">
-      <img alt="Issues" src="https://img.shields.io/github/issues/hebertcisco/deploy-python-fastapi-in-vercel?style=flat&color=336791" />
-    </a>
-    <a href="https://github.com/hebertcisco/deploy-python-fastapi-in-vercel/pulls">
-      <img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/hebertcisco/deploy-python-fastapi-in-vercel?style=flat&color=336791" />
-    </a>
-    <br />
-  <a href="https://github.com/hebertcisco/deploy-python-fastapi-in-vercel/issues/new/choose">Report Bug</a>
-  <a href="https://github.com/hebertcisco/deploy-python-fastapi-in-vercel/issues/new/choose">Request Feature</a>
-  </p>
-  <h3 align="center">Systems on which it has been tested.</h3>
- <p align="center">
-  <a href="https://ubuntu.com/download">
-      <img alt="Ubuntu" src="https://img.shields.io/badge/Ubuntu-E95420?style=flat&logo=ubuntu&logoColor=white" />
-    </a>
-  <a href="https://www.microsoft.com/pt-br/software-download/windows10">
-      <img alt="Windows" src="https://img.shields.io/badge/Windows-0078D6?style=flat&logo=windows&logoColor=white" />
-    </a>
-  </p>
-<p align="center">Did you like the project? Please, considerate <a href="https://www.buymeacoffee.com/hebertcisco">a donation</a> to help improve!</p>
+## Overview
 
-<p align="center"><strong></strong>✨</p>
+The AI Captcha Solver is a machine learning-powered API service that can recognize and extract text from captcha images. It uses a fine-tuned TrOCR (Transformer-based Optical Character Recognition) model to accurately decode text from captcha images, helping automate processes that would otherwise require manual captcha solving.
 
-# Getting started
+And for Google Recaptcha solving we use whisper Model to transcribe the audio to text and passing the Text to the input google recaptcha getting easily solved.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fhebertcisco%2Fdeploy-python-fastapi-in-vercel%2Ftree%2Fmain%2Fpython%2FFastApi&demo-title=FastApi%20%2B%20Vercel&demo-description=Use%20FastApi%202%20on%20Vercel%20with%20Serverless%20Functions%20using%20the%20Python%20Runtime.&demo-url=https%3A%2F%2FFastApi-python-template.vercel.app%2F&demo-image=https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png)
+And for Puzzle Image Captcha we use OpenCV to detect the puzzle and calculate the coordinates of the piece and solving the puzzle easily.
 
-# FastApi + Vercel
+### Demo
 
-This example shows how to use FastApi 0.88.0 on Vercel with Serverless Functions using the [Python Runtime](https://vercel.com/docs/concepts/functions/serverless-functions/runtimes/python).
+<h2>Google Recaptcha</h2>
+<p align="center">
+  <video width="640" height="360" controls>
+    <source src="VID_20250408225024.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</p>
 
-[![Python testing](https://github.com/hebertcisco/deploy-python-fastapi-in-vercel/actions/workflows/python-app.yml/badge.svg?branch=main)](https://github.com/hebertcisco/deploy-python-fastapi-in-vercel/actions/workflows/python-app.yml)
-[![Docker Image CI](https://github.com/hebertcisco/deploy-python-fastapi-in-vercel/actions/workflows/docker-image.yml/badge.svg)](https://github.com/hebertcisco/deploy-python-fastapi-in-vercel/actions/workflows/docker-image.yml)
+<h2>Puzzle Image Captcha</h2>
+<p align="center">
+  <video width="640" height="360" controls>
+    <source src="VID_20250408224929.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</p>
 
-## Demo
+*Note: If you're viewing this on GitHub, you may need to download the video to view it. The demo video is located in the root directory of the repository.*
 
-[deploy-python-fastapi-in-vercel.vercel.app](https://deploy-python-fastapi-in-vercel.vercel.app)
+## Features
 
-## How it Works
+- **High Accuracy**: Fine-tuned model specifically for captcha recognition
+- **Multiple Input Methods**: Support for both file uploads and base64-encoded images
+- **RESTful API**: Easy integration with any application
+- **Docker Support**: Simple deployment with Docker
+- **Vercel Deployment**: Ready for serverless deployment on Vercel
 
-This example uses the Web Server Gateway Interface (WSGI) with FastApi to enable handling requests on Vercel with Serverless Functions.
+## Technology Stack
 
-## Running Locally
+- **FastAPI**: Modern, fast web framework for building APIs
+- **Transformers**: State-of-the-art machine learning library for NLP and Vision tasks
+- **TrOCR**: Microsoft's Transformer-based OCR model
+- **whisper**: OpenAI's state-of-the-art speech recognition model
+- **OpenCV**: Open Source Computer Vision library
+- **Python 3.9+**: Modern Python for better performance and features
 
-### With Docker
-```bash
-# Build the Docker image
-docker build -t deploy-python-fastapi-in-vercel .
+## Getting Started
 
-# Run the Docker container
-docker run -p 8000:8000 deploy-python-fastapi-in-vercel
+### Prerequisites
 
-```
+- Python 3.9 or higher
+- pip (Python package manager)
 
-### With uvicorn
-
-#### Install dependencies
+### Installation
 
 ```bash
+# Clone the repository
+git clone https://github.com/saifulbabo67646/captcha-solver.git
+cd captcha-solver
+
+# Install dependencies
 pip install -r requirements.txt
-```
-```bash
-uvicorn main:app --host 0.0.0.0 --port 8000
-```
-
-Your FastApi application is now available at `http://localhost:8000`.
-
-## One-Click Deploy
-
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=vercel-examples):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fhebertcisco%2Fdeploy-python-fastapi-in-vercel%2Ftree%2Fmain%2Fpython%2FFastApi&demo-title=FastApi%20%2B%20Vercel&demo-description=Use%20FastApi%202%20on%20Vercel%20with%20Serverless%20Functions%20using%20the%20Python%20Runtime.&demo-url=https%3A%2F%2FFastApi-python-template.vercel.app%2F&demo-image=https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png)
-
-## 🤝 Contributing
-
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](issues).
-
-## Show your support
-
-Give a ⭐️ if this project helped you!
-
-Or buy me a coffee 🙌🏾
-
-<a href="https://www.buymeacoffee.com/hebertcisco">
-    <img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=hebertcisco&button_colour=FFDD00&font_colour=000000&font_family=Inter&outline_colour=000000&coffee_colour=ffffff" />
-</a>
-
-## 📝 License
-
-Copyright © 2023 [Hebert F Barros](https://github.com/hebertcisco).<br />
-This project is [MIT](LICENSE) licensed.
